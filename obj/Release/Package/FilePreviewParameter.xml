@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WorldDestinationss" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:koi1d8gbf1.database.windows.net,1433;Initial Catalog=WorldDestinationss_db;User Id=Bisera@koi1d8gbf1;Password=4C5P6S2D3T??" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DestinationsEntities-Web.config Connection String" description="" value="metadata=res://*/WorldDestinationsModel.csdl|res://*/WorldDestinationsModel.ssdl|res://*/WorldDestinationsModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=tcp:koi1d8gbf1.database.windows.net,1433;Initial Catalog=WorldDestinationss_db;User Id=Bisera@koi1d8gbf1;Password=4C5P6S2D3T??&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DestinationsEntities']/@connectionString" />
+  </parameter>
+</parameters>

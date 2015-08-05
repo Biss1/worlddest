@@ -1,0 +1,49 @@
+﻿@model WorldDestinationsWebApi.Place
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">ASP.NET Web API</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>World Destinations ASP.NET Web API!</h1><br />
+                <h2>Enter informations about Places.</h2>
+            </hgroup>
+            <p>
+                ASP.NET Web API allows you to expose your applications, data and services to the
+                web directly over HTTP.
+                Places where u can find data:
+                http://www.tripadvisor.co.uk/Inspiration
+            </p>
+            <h1>@ViewData["message"]</h1>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+      
+     @using (Html.BeginForm("CategoryChosen", "Home", FormMethod.Post)){
+        <div class="editor-field">
+              Enter name of place: @Html.EditorFor(model=>model.Name)
+            @Html.ValidationMessageFor(model=>model.Name)</div><br />
+         <div class="editor-field">
+             Place: @Html.EditorFor(model=>model.Place1)
+           Description: @Html.EditorFor(model=>model.Description)
+             @Html.ValidationMessageFor(model=>model.Description)<br />
+             </div>
+             <div class="editor-field">
+           State: @Html.EditorFor(model=>model.State)
+                 Country: @Html.EditorFor(model=>model.Country)
+           Continent: @Html.EditorFor(model=>model.Continent)<br />
+           PictureURL: @Html.EditorFor(model=>model.MainPictureURL)
+                 @Html.ValidationMessageFor(model=>model.MainPictureURL)<br />
+           Category: 
+         @Html.DropDownListFor(model => model.CategoryID, ViewBag.Categories as IEnumerable<SelectListItem>);
+            </div>
+	<p><input type="submit" value="Submit" /> </p>
+     }
+    </section>
+</div>

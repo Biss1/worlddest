@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WorldDestinationsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="WorldDestinationsModelStoreContainer">
+    <EntitySet Name="Category" EntityType="WorldDestinationsModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Place" EntityType="WorldDestinationsModel.Store.Place" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRating" EntityType="WorldDestinationsModel.Store.UserRating" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Place__CategoryI__31EC6D26" Association="WorldDestinationsModel.Store.FK__Place__CategoryI__31EC6D26">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Place" EntitySet="Place" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRating_Place" Association="WorldDestinationsModel.Store.FK_UserRating_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="UserRating" EntitySet="UserRating" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="nchar" Nullable="false" MaxLength="15" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="30" />
+    <Property Name="Description" Type="nchar" MaxLength="100" />
+    <Property Name="PictureURL" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="PlaceID" />
+    </Key>
+    <Property Name="PlaceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Place" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="30" />
+    <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="MainPictureURL" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="CategoryID" Type="nchar" Nullable="false" MaxLength="15" />
+    <Property Name="Continent" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Rating" Type="nchar" MaxLength="10" />
+    <Property Name="AltPictureURL" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="UserRating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlaceID" Type="int" Nullable="false" />
+    <Property Name="Rating" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Place__CategoryI__31EC6D26">
+    <End Role="Category" Type="WorldDestinationsModel.Store.Category" Multiplicity="1" />
+    <End Role="Place" Type="WorldDestinationsModel.Store.Place" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Place">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRating_Place">
+    <End Role="Place" Type="WorldDestinationsModel.Store.Place" Multiplicity="1" />
+    <End Role="UserRating" Type="WorldDestinationsModel.Store.UserRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="UserRating">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

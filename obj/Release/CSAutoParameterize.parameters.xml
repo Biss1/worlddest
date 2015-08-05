@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-WorldDestinationsWebApi-20140825204236;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-WorldDestinationsWebApi-20140825204236.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DestinationsEntities-Web.config Connection String" description="DestinationsEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/WorldDestinationsModel.csdl|res://*/WorldDestinationsModel.ssdl|res://*/WorldDestinationsModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=koi1d8gbf1.database.windows.net.;initial catalog=Destinations;user id=Bisera;password=4C5P6S2D3T??;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DestinationsEntities']/@connectionString" />
+  </parameter>
+  <parameter name="WorldDestinationsEntities-Web.config Connection String" description="WorldDestinationsEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/WorldDestinationsModel.csdl|res://*/WorldDestinationsModel.ssdl|res://*/WorldDestinationsModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=koi1d8gbf1.database.windows.net.;initial catalog=Destinations;user id=Bisera;password=4C5P6S2D3T??;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\BB\\Desktop\\Menu\\WorldDestinations\\WorldDestinationsWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WorldDestinationsEntities']/@connectionString" />
+  </parameter>
+</parameters>
